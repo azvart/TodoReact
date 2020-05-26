@@ -8,8 +8,10 @@ class Complete extends React.Component{
 
     render(){
         return(
-            <div>
-                Complete
+            <div className='col-lg-12'>
+                <ul className='list-group'>
+                    COMPLETE
+                </ul>
             </div>
         )
     }

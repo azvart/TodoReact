@@ -9,8 +9,10 @@ class Delete extends React.Component{
 
     render(){
         return(
-            <div>
-                Delete
+            <div className='col-lg-12'>
+                <ul className='list-group'>
+                    DELETE
+                </ul>
             </div>
         )
     }

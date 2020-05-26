@@ -1,4 +1,5 @@
 import React from 'react';
+import { Checkbox, Button } from 'antd';
 
 
 class Li extends React.Component{
@@ -13,7 +14,7 @@ class Li extends React.Component{
     render(){
         return(
                 <div>
-                    {this.props.items.map(item => (<li className='list-group-item'>{item.text}</li>))}
+                    {this.props.items.map(item => (<li className='list-group-item'><Checkbox>{item.text}<Button type='primary'>Del</Button></Checkbox></li>))}
                 </div>
         )
     }
