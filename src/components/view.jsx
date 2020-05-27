@@ -8,7 +8,23 @@ import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 class View extends React.Component{
 
-
+    constructor(props){
+        super(props);
+        this.state ={
+            add:{
+                items: [], 
+                text: 'ADD' 
+            },
+            complete:{
+                items: [], 
+                text: 'COMPLETE' 
+            },
+            delete:{
+                items: [], 
+                text: 'DELETE' 
+            }
+        };
+    }
 
 
     render(){
@@ -23,9 +39,9 @@ class View extends React.Component{
                     </Col>
                 </Row>
                 
-                    <Route path = '/add' render={()=><Add />} />
-                    <Route path = '/complete' render={()=><Complete />} />
-                    <Route path = '/delete' render={()=><Delete />} />
+                    <Route path = '/add' render={()=><Add store={this.state} />} />
+                    <Route path = '/complete' render={()=><Complete store={this.state} />} />
+                    <Route path = '/delete' render={()=><Delete store = {this.state} />} />
 
                 </BrowserRouter>
             </div>
