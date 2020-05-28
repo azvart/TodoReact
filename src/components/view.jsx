@@ -13,7 +13,7 @@ class View extends React.Component{
         this.state ={
             add:{
                 items: [], 
-                text: 'ADD' 
+                text: '' 
             },
             complete:{
                 items: [], 

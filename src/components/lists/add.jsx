@@ -5,32 +5,32 @@ class Add extends React.Component{
     // eslint-disable-next-line no-useless-constructor
     constructor(props){
         super(props);
-        
-        // this.add = this.add.bind(this);
-        // this.text = this.text.bind(this);
+        this.state = this.props.store.add;
+        this.add = this.add.bind(this);
+        this.texts = this.texts.bind(this);
     }
+    texts(e){
+       this.setState({ text: e.target.value });
+    }
+    add(){
+        if(this.state.text.length === 0){
+            return;
+        }
+       const newText = {
+           text: this.state.text,
+           items: Date.now()
+       }
+       
+       this.setState(state => ({
+        items: state.items.concat(newText),
+        text: ''
+      }));
 
-    // text(e){
-    //     this.setState({ text: e.target.value });
-    // }
-
-    // add(){
-
-    //     if (this.state.text.length === 0) {
-    //         return;
-    //       }
-    //       const newItem = {
-    //         text: this.state.text,
-    //         id: Date.now()
-    //       };
-    //       this.setState(state => ({
-    //         items: state.items.concat(newItem),
-    //         text: ''
-    //       }));
+       
+      
         
-        
-    // }
 
+    }
 
 
     render(){
@@ -38,13 +38,13 @@ class Add extends React.Component{
             <div className='row'>
                 <div className='col-lg-12'>
                     
-                        <input type="text" className="form-control my-3" />
-                        <button className='btn btn-primary my-3' >Add</button>
+                        <input type="text" className="form-control my-3" onChange = {this.texts}/>
+                        <button className='btn btn-primary my-3' onClick = {this.add} >Add</button>
                     
                 </div>
                 <div className='col-lg-12'>
                     <ul className='list-group'>
-                        <Li list = { this.props.store.add} />
+                        <Li list = {this.props.store.add} />
                     </ul>
                 </div>
             </div>

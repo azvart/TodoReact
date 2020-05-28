@@ -41,9 +41,9 @@ class Li extends React.Component{
     render(){
         return(
                 <div>
-                    { this.props.list.items.map(item => (
+                    {/* { this.props.list.items.map(item => (
                         <li className='list-group-item'><Checkbox onClick={this.change}>{item.text}<Button type='primary align-middle mx-2' size='small' shape='circle'icon={<CloseCircleOutlined style={{fontSize:'18px',display:'flex',justifyContent:'center'}} />} onClick={this.del}></Button></Checkbox></li>
-                    ))}
+                    ))} */}
                 </div>
         )
     }
